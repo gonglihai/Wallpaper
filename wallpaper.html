@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <script src="js/vue.js"></script>
+    <script src="js/calendarData.js"></script>
+    <link href="css/wallpaper.css" type="text/css" rel="styleSheet" />
+    <script src='js/module/wallpaperImg.js'></script>
+    <script src='js/module/digitalClock.js'></script>
+    <script src='js/module/calendar.js'></script>
+</head>
+
+<body>
+    <div id='app'>
+        <wp-wallpaper-img :date='date' :src='wallpaperSrc'></wp-wallpaper-img>
+        <div class='container'>
+            <wp-digital-clock :date='date'></wp-digital-clock>
+            <wp-calendar :date='date'></wp-calendar>
+        </div>
+    </div>
+    <script src="js/wallpaper.js"></script>
+</body>
+
+</html>
