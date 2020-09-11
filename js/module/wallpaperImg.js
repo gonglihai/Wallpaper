@@ -9,7 +9,7 @@ Vue.component('wp-wallpaper-img', {
         return {
             imgSrc: this.src,           //组件内图片图片地址
             show: false,                //是否显示
-            oldDay: this.date.getDay()  //老的天
+            oldDay: this.date.getDate()  //老的天
         }
     },
     watch: {
@@ -18,7 +18,7 @@ Vue.component('wp-wallpaper-img', {
          * @param {Date} newValue date的新值 
          */
         date: function (newValue) {
-            var newDay = newValue.getDay();
+            var newDay = newValue.getDate();
             //当 当前天 不等于 老的天 且 当前分钟大于5时 重加载壁纸
             if (this.oldDay != newDay) {
                 if (newValue.getMinutes() > 5) {

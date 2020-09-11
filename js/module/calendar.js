@@ -26,13 +26,13 @@ Vue.component('wp-calendar', {
     data: function () {
         return {
             weekStrArr: ['日', '一', '二', '三', '四', '五', '六'],                      //星期中文字符
-            oldDay: this.date.getDay(),     //当前日
+            oldDay: this.date.getDate(),     //当前日
             lunarCalendarThatDayData: LUNAR_CALENDAR_DATA[this.getIndex(this.date)]     //当日农历数据
         }
     },
     watch: {
         date: function (newValue) {
-            var newDay = newValue.getDay();
+            var newDay = newValue.getDate();
             if (this.oldDay != newDay) {
                 this.lunarCalendarThatDayData = LUNAR_CALENDAR_DATA[this.getIndex(newValue)];
                 this.oldDay = newDay;
