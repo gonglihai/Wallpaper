@@ -8,18 +8,22 @@
     <script src="js/vue.js"></script>
     <script src="js/calendarData.js"></script>
     <link href="css/wallpaper.css" type="text/css" rel="styleSheet" />
+    <link href="css/module/calender.css" type="text/css" rel="styleSheet" />
+    <link href="css/module/wallpaperImg.css" type="text/css" rel="styleSheet" />
+    <link href="css/module/digitalClock.css" type="text/css" rel="styleSheet" />
+    <link href="css/module/pointerClock.css" type="text/css" rel="styleSheet" />
     <script src='js/module/wallpaperImg.js'></script>
     <script src='js/module/digitalClock.js'></script>
     <script src='js/module/calendar.js'></script>
+    <script src='js/module/pointerClock.js'></script>
 </head>
 
 <body>
     <div id='app'>
         <wp-wallpaper-img :date='date' :src='wallpaperSrc'></wp-wallpaper-img>
-        <div class='container'>
-            <wp-digital-clock :date='date'></wp-digital-clock>
-            <wp-calendar :date='date'></wp-calendar>
-        </div>
+        <wp-digital-clock @component-onmousedown='onMousedown' :date='date' :style='digitalClock'></wp-digital-clock>
+        <wp-calendar @component-onmousedown='onMousedown' :date='date' :style='calendar'></wp-calendar>
+        <wp-pointer-clock @component-onmousedown='onMousedown' :date='date' :style='pointerClock'></wp-pointer-clock>
     </div>
     <script src="js/wallpaper.js"></script>
 </body>

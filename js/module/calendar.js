@@ -1,7 +1,7 @@
 Vue.component('wp-calendar', {
     props: ['date'],
     template: `
-        <div class='date'>
+        <div @mousedown='onMousedown' class='wp-calendar'>
             <!-- 左侧公历日期 -->
             <div class='date-left'>
                 <div class='title'>
@@ -46,6 +46,14 @@ Vue.component('wp-calendar', {
          **/
         getIndex: function (date) {
             return Math.floor(Math.abs(1599321600000 - date.getTime()) / 86400000);
+        },
+        /**
+         * 鼠标按下事件
+         * @param {Event} e  按下事件
+         */
+        onMousedown: function (e) {
+            //触发父级事件
+            this.$emit('component-onmousedown', e, this.$el, 'calendar');
         }
     },
     computed: {

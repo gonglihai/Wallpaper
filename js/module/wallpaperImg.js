@@ -2,7 +2,7 @@ Vue.component('wp-wallpaper-img', {
     props: ['date', 'src'],
     template: `
         <transition name="wallpaper">
-            <img v-show='show' :src='imgSrc' @load="imgOnLoad" draggable="false" />
+            <img class='wallpaper' v-show='show' :src='imgSrc' @load="imgOnLoad" draggable="false" />
         </transition>
     `,
     data: function () {
